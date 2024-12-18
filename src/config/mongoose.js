@@ -7,6 +7,7 @@ exports.connect = () => {
     // print mongoose logs in dev env
     if (env === "development") {
       mongoose.set("debug", false);
+      mongoose.set('strictQuery', true);
     }
     mongoose
       .connect(mongodb, {
