@@ -4,4 +4,4 @@ exports.User = require("./UserModel");
 exports.Contact = require("./ContactModal");
 exports.PartnerRequest = require("./PartnershipRequestModal");
 exports.Purches = require("./PurchagesModal");
-exports.Mongoose = mongoose;
+exports.Mongoose = mongoose; // for test
