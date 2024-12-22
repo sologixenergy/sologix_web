@@ -36,7 +36,7 @@ router.use("/v1/user", require("./user"));
 router.use("/v1/admin", require("./admin"));
 
 // Protect all routes after this middleware
-router.use(VerifyToken);
+// router.use(VerifyToken);
 
 //Global error handler
 router.use((req, res) => {
