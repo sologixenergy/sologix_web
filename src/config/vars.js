@@ -4,6 +4,13 @@ const dotenvExample = require("dotenv").config({
   path: path.resolve(process.cwd(), ".env.example"),
 });
 
+const username = process.env.DB_USER;
+const password = process.env.DB_PASSWORD;
+
+if (!username || !password) {
+  throw new Error("Database credentials are missing!");
+}
+
 if (
   dotenv.parsed &&
   dotenvExample.parsed &&
