@@ -1,8 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const  Auth  = require("./auth");
-const  User  = require("./user");
-const Admin = require("./admin");
 const { VerifyToken } = require("../middlewares");
 const { env, secret } = require("../config/vars");
 
@@ -34,9 +31,9 @@ if (env == "development") {
 router.use(`/${secret}/apidocs`, express.static(__dirname + "/../../apidocs"));
 
 //Import APIs
-router.use("/v1/auth", Auth);
-router.use("/v1/user", User);
-router.use("/v1/admin", Admin);
+router.use("/v1/auth", require("./auth"));
+router.use("/v1/user", require("./user"));
+router.use("/v1/admin", require("./admin"));
 
 // Protect all routes after this middleware
 router.use(VerifyToken);

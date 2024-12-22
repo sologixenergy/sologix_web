@@ -17,7 +17,7 @@ module.exports = {
   mongodb: process.env.MONGO_CONNECTION_STRING,
   secret: process.env.JWT_SECRET,
   env: process.env.NODE_ENV,
-  public_file_url: process.env.PUBLIC_URL + "/files/",
+  // public_file_url: process.env.PUBLIC_URL + "/files/",
   tokenExpiryLimit: 86400,
   otpExpiryLimit: 1,
   isAppSocketIOEnable: false,
