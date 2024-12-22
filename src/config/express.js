@@ -23,7 +23,7 @@ app.use(bodyParser.raw({ limit: "50mb" }));
 //     debug: env === "development",
 //   })
 // );
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
