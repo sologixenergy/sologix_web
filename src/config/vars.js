@@ -5,7 +5,8 @@ const dotenvExample = require("dotenv").config({
 });
 
 if (
-  Object !== null &&
+  dotenv.parsed &&
+  dotenvExample.parsed &&
   JSON.stringify(Object.keys(dotenv.parsed).sort()) !==
     JSON.stringify(Object.keys(dotenvExample.parsed).sort())
 ) {
