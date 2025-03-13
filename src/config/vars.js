@@ -1,5 +1,6 @@
-const path = require("path");
-const dotenv = require("dotenv").config();
+
+require("dotenv").config();
+
 
 
 module.exports = {

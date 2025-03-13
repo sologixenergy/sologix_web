@@ -7,6 +7,7 @@ mongoose.connect();
 
 // listen to requests
 const server = app;
+
 server.listen(port, () =>
-  console.log(`Server started on port ${port} (${env})`)
+  console.log(`Server started on port ${port}`)
 );

@@ -28,6 +28,7 @@ const {
 
 module.exports = {
   Register: async (req, res, next) => {
+    console.log("renter");
     try {
       const { name, phone, email, password, confirmPassword } = req.body;
       if (password == "")
@@ -68,6 +69,7 @@ module.exports = {
 
       return HandleSuccess(res, createUser);
     } catch (error) {
+      console.log(error);
       return HandleServerError(res, req, error);
     }
   },

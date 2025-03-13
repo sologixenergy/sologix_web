@@ -36,6 +36,6 @@
 	},
 	"devDependencies": {
 		"apidoc": "^0.52.0",
-		"nodemon": "^2.0.16"
+		"nodemon": "^2.0.22"
 	}
 }

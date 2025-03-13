@@ -7,6 +7,7 @@ const {
 } = require("../controllers/BaseController");
 const { User } = require("../models");
 
+
 const VerifyToken = (req, res, next) => {
   try {
     if (typeof req.headers.authorization !== "undefined") {
@@ -20,6 +21,7 @@ const VerifyToken = (req, res, next) => {
 
         if (!isUserExists) return UnauthorizedError(res);
         req.user = isUserExists[0];
+        req.user_id=isUserExists[0]._id;
         next();
       });
     } else return UnauthorizedError(res);

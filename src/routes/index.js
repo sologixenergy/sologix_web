@@ -35,8 +35,16 @@ router.use("/v1/auth", require("./auth"));
 router.use("/v1/user", require("./user"));
 router.use("/v1/admin", require("./admin"));
 
-// Protect all routes after this middleware
+
+//product routes
+router.use("/v1/products",require("./products"));
+//cart routes
 router.use(VerifyToken);
+router.use("/v1/cart",require("./cart"));
+
+
+// Protect all routes after this middleware
+
 
 //Global error handler
 router.use((req, res) => {

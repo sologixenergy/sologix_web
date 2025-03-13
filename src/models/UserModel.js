@@ -13,9 +13,12 @@ const UserSchema = new Schema(
       trim: true,
       enum: ["SuperAdmin", "Admin", "Customer"],
     },
-
     active_session_refresh_token: { type: String },
     access_token: { type: String },
+    cart:[{
+      type:Schema.Types.ObjectId,
+      ref:"Product",
+    }]
   },
   { timestamps: true }
 );

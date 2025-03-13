@@ -238,7 +238,7 @@ const isDataURL = (s) => {
   return !!s.match(regex);
 };
 
-const GeneratePassword = (length = 8) => {
+const   GeneratePassword = (length = 8) => {
   let result = "";
   let characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
