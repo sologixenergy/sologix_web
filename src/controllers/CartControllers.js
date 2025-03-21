@@ -51,7 +51,7 @@ const getUserCart = async (req, res) => {
             return res.status(404).json({ msg: "User not found" });
         }
 
-        res.status(200).json({ msg: "Cart fetched successfully", cart: user.cart });
+        res.status(200).json({ msg: "Cart fetched successfully", cart: user.cart,count:user.cart.length});
     } catch (error) {
         console.error("Error fetching cart:", error);
         res.status(500).json({ msg: "Internal Server Error", error: error.message });
@@ -59,5 +59,35 @@ const getUserCart = async (req, res) => {
 };
 
 
+const RemoveFromCart=async(req,res)=>{
+     try {
+        const userId=req.user_id;
+        const {productId}=req.query;
 
-module.exports = { addToCart,getUserCart};
+        if (!userId) {
+            return res.status(400).json({ msg: "User ID is required" });
+        }
+        if(!productId){
+            return res.status(400).json({ msg: "productId ID is required" });
+        }
+        
+        
+        const user = await User.findById(userId);
+        user.cart=user.cart.filter(item=>item!=productId);
+        user.save();
+        const userPopulate=await user.populate("cart");
+
+        if (!user) {
+            return res.status(404).json({ msg: "User not found" });
+        }
+
+        res.status(200).json({ msg: "Item deleted successfully", cart:userPopulate.cart,count:userPopulate.cart.length});
+    } catch (error) {
+        console.error("Error deleting from cart:", error);
+        res.status(500).json({ msg: "Internal Server Error", error: error.message });
+    }
+
+}
+
+
+module.exports = { addToCart,getUserCart,RemoveFromCart};

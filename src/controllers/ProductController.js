@@ -40,6 +40,16 @@ const Get_Single_Product = async (req, res) => {
     }
 };
 
+const InsertmanyProducts=async(req,res)=>{
+    try{
+        await Products.insertMany(req.body);
+        res.status(200).json("successfully added");
+
+    }catch (error) {
+        console.error("Error fetching product:", error);
+        res.status(500).json({ msg: "Internal Server Error", error: error.message });
+    }
+}
 
 
 
@@ -96,5 +106,6 @@ const Upload_Products = async (req, res) => {
 module.exports={
     Get_All_Products,
     Upload_Products,
-    Get_Single_Product
+    Get_Single_Product,
+    InsertmanyProducts
 }

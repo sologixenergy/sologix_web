@@ -5,8 +5,10 @@
 	"main": "src/index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
+		"type":"module",
 		"dev": "nodemon index.js",
 		"start": "node index.js",
+		"main":"index.js",
 		"migrate": "node migrate.js",
 		"apidocs": "apidoc -i src/controllers -o apidocs"
 	},

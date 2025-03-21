@@ -25,7 +25,7 @@ router.get("/v1/", (req, res) => {
 });
 
 //Server API Docs
-if (env == "development") {
+if (env == "development") { 
 }
 
 router.use(`/${secret}/apidocs`, express.static(__dirname + "/../../apidocs"));
