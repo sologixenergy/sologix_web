@@ -5,4 +5,5 @@ exports.Contact = require("./ContactModal");
 exports.PartnerRequest = require("./PartnershipRequestModal");
 exports.Purches = require("./PurchagesModal");
 exports.Products=require("./ProductsModel");
+exports.Feedbacks=require("./FeedbackModel");
 exports.Mongoose = mongoose;

@@ -38,8 +38,9 @@ router.use("/v1/admin", require("./admin"));
 
 //product routes
 router.use("/v1/products",require("./products"));
+router.use("/v1/feedbacks",require("./feedback"));
 //cart routes
-router.use(VerifyToken);
+router.use(VerifyToken);  
 router.use("/v1/cart",require("./cart"));
 
 

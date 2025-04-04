@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const ContactSchema = new Schema(
   {
-    name: { type: String, trim: true },
+    name: { type: String, trim: true }  ,
     email: { type: String, trim: true },
     phone: { type: String, trim: true },
     state: { type: String, trim: true },
